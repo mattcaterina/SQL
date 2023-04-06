@@ -1,0 +1,46 @@
+/* Create table about the people and what they do here */
+CREATE TABLE celebrity (id integer primary key autoincrement, fullname TEXT, Oscars_won Integer); 
+
+INSERT into celebrity (fullname, Oscars_won) Values("Brendan Fraser", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Will Smith", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Anthony Hopkins", "2");
+INSERT into celebrity (fullname, Oscars_won) Values("Rami Malek", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Joaquin Phoenix", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Gary Oldman", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Casey Affleck", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Leonardo DiCaprio", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Eddie Redmayne", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Matthew McConaughey", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Daniel Day-Lewis", "3");
+INSERT into celebrity (fullname, Oscars_won) Values("Jean Dujardin", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Colin Firth", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Jeff Bridges", "1");
+INSERT into celebrity (fullname, Oscars_won) Values("Sean Penn", "2");
+
+
+Create table Movies (ID Integer Primary KEY autoincrement, celebrity_id INTEGER, movie_name INTEGER);
+
+INSERT into movies (celebrity_id, movie_name) VALUES ("1", "The Whale");
+INSERT into movies (celebrity_id, movie_name) VALUES ("2", "King Richard");
+INSERT into movies (celebrity_id, movie_name) VALUES ("3", "The Father");
+INSERT into movies (celebrity_id, movie_name) VALUES ("4", "Bohemian Rhapsody");
+INSERT into movies (celebrity_id, movie_name) VALUES ("5", "Joker");
+INSERT into movies (celebrity_id, movie_name) VALUES ("6", "Darkest Hour");
+INSERT into movies (celebrity_id, movie_name) VALUES ("7", "Manchester by the Sea");
+INSERT into movies (celebrity_id, movie_name) VALUES ("8", "The Revenant");
+INSERT into movies (celebrity_id, movie_name) VALUES ("9", "The Theory of Everything");
+INSERT into movies (celebrity_id, movie_name) VALUES ("10", "Dallas Buyers Club");
+INSERT into movies (celebrity_id, movie_name) VALUES ("11", "Lincoln");
+INSERT into movies (celebrity_id, movie_name) VALUES ("12", "The Artist");
+INSERT into movies (celebrity_id, movie_name) VALUES ("13", "The King's Speech");
+INSERT into movies (celebrity_id, movie_name) VALUES ("14", "Crazy Heart");
+INSERT into movies (celebrity_id, movie_name) VALUES ("15", "Milk");
+INSERT into movies (celebrity_id, movie_name) VALUES ("11", "There Will Be Blood");
+INSERT into movies (celebrity_id, movie_name) VALUES ("15", "Mystic River");
+INSERT into movies (celebrity_id, movie_name) VALUES ("3", "The Silence of the Lambs");
+INSERT into movies (celebrity_id, movie_name) VALUES ("11", "My Left Foot");
+
+
+SELECT celebrity.fullname as Best_Actor_Oscar_Winner, movies.movie_name as Movie_Won from celebrity
+LEFT Outer Join movies
+on celebrity.id = movies.celebrity_id
